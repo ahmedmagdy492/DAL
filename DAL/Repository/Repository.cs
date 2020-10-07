@@ -25,7 +25,6 @@ namespace DAL.Repository
             dbSet.Add(model);
             return model;
         }
-
         public bool Commit()
         {
             return _context.SaveChanges() > 0;

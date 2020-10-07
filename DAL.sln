@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{1C3034F8-8A21-4A96-90DD-2F9C24B2186C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedLib", "SharedLib\SharedLib.csproj", "{63B3300D-95E3-481D-BFB8-99A013AC27B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{19336F6C-A874-4621-8C38-B9980EC507D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{1C3034F8-8A21-4A96-90DD-2F9C24B2186C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C3034F8-8A21-4A96-90DD-2F9C24B2186C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C3034F8-8A21-4A96-90DD-2F9C24B2186C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63B3300D-95E3-481D-BFB8-99A013AC27B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63B3300D-95E3-481D-BFB8-99A013AC27B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63B3300D-95E3-481D-BFB8-99A013AC27B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63B3300D-95E3-481D-BFB8-99A013AC27B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19336F6C-A874-4621-8C38-B9980EC507D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19336F6C-A874-4621-8C38-B9980EC507D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19336F6C-A874-4621-8C38-B9980EC507D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19336F6C-A874-4621-8C38-B9980EC507D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
