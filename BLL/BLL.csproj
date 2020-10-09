@@ -49,8 +49,10 @@
     <Compile Include="Services\IFormService.cs" />
     <Compile Include="Services\IPasswordChangingService.cs" />
     <Compile Include="Services\IPasswordHashing.cs" />
+    <Compile Include="Services\IRoleService.cs" />
     <Compile Include="Services\IUserService.cs" />
     <Compile Include="Services\PasswordChangerService.cs" />
+    <Compile Include="Services\RoleService.cs" />
     <Compile Include="Services\Sha256Hashing.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Services\YahooEmailService.cs" />

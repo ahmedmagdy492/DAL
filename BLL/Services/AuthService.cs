@@ -20,6 +20,11 @@ namespace BLL.Services
             _userService = new UserService();
         }
 
+        public bool IsFirstTime()
+        {
+            return _userService.GetUsers().Count() == 0 ? true : false;
+        }
+
         public async Task<User> Login(string username, string password)
         {
             User user = await _userService.GetUserByUsername(username);
@@ -37,6 +42,9 @@ namespace BLL.Services
         public async Task<User> Register(User user)
         {
             User existingUser = await _userService.GetUserByUsername(user.Username);
+
+            // hashing the password
+            user.Password = _passwordHashing.Hash(user.Password);
 
             if (existingUser != null)
                 return null;

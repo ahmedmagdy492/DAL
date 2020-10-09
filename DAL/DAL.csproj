@@ -56,6 +56,10 @@
     <Compile Include="Migrations\202010061927019_initial.designer.cs">
       <DependentUpon>202010061927019_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010081401472_addedRoleFormsModel.cs" />
+    <Compile Include="Migrations\202010081401472_addedRoleFormsModel.designer.cs">
+      <DependentUpon>202010081401472_addedRoleFormsModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\Category.cs" />
@@ -64,6 +68,7 @@
     <Compile Include="Models\OrderItems.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\RoleForms.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IRepository.cs" />
@@ -77,6 +82,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202010061927019_initial.resx">
       <DependentUpon>202010061927019_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010081401472_addedRoleFormsModel.resx">
+      <DependentUpon>202010081401472_addedRoleFormsModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

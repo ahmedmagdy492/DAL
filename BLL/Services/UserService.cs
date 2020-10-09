@@ -12,11 +12,12 @@ namespace BLL.Services
     public class UserService : IUserService
     {
         private readonly IRepository<User> _userRepo;
-
+        private readonly IPasswordHashing _passwordHashing;
         public UserService()
         {
             UnitOfWork _unitOfWork = SharedLib.UnitOfWorkCreator.Instance;
             _userRepo = _unitOfWork.CreateUserRepo();
+            _passwordHashing = new Sha256Hashing();
         }
 
         public User AddOrUpdate(User user)
@@ -28,9 +29,10 @@ namespace BLL.Services
 
         public User AddUser(User user)
         {
-            var createdUser = _userRepo.Add(user);
+            user.Password = _passwordHashing.Hash(user.Password);
+            _userRepo.Add(user);
             _userRepo.Commit();
-            return createdUser;
+            return user;
         }
 
         public Task<User> GetUserByUsername(string username)
@@ -39,6 +41,11 @@ namespace BLL.Services
             {
                 return _userRepo.GetAll().FirstOrDefault(u => u.Username == username);
             });
+        }
+
+        public IEnumerable<User> GetUsers()
+        {
+            return _userRepo.GetAll();
         }
     }
 }

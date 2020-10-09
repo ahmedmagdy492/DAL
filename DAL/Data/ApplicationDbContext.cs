@@ -15,6 +15,7 @@ namespace DAL.Data
         public DbSet<FormView> FormViews { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItems> OrderItems { get; set; }
+        public DbSet<RoleForms> RoleForms { get; set; }
 
         public ApplicationDbContext() : base("name=DefaultConnection")
         {

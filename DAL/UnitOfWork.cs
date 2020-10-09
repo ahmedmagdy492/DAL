@@ -19,6 +19,7 @@ namespace DAL
         private IRepository<Product> _productRepo;
         private IRepository<Order> _orderRepo;
         private IRepository<OrderItems> _orderItemsRepo;
+        private IRepository<RoleForms> _roleFormsRepo;
 
         public UnitOfWork()
         {
@@ -87,6 +88,12 @@ namespace DAL
                 return _orderItemsRepo;
             }
             return _orderItemsRepo;
+        }
+        public IRepository<RoleForms> CreateRoleFormsRepo()
+        {
+            if (_roleFormsRepo == null)
+                _roleFormsRepo = new Repository<RoleForms>(_context);
+            return _roleFormsRepo;
         }
     }
 }

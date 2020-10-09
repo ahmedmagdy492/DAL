@@ -12,5 +12,6 @@ namespace BLL.Services
         Task<User> GetUserByUsername(string username);
         User AddUser(User user);
         User AddOrUpdate(User user);
+        IEnumerable<User> GetUsers();
     }
 }

@@ -10,9 +10,6 @@ namespace DAL.Models
     public class FormView : BaseModel
     {
         public string FormName { get; set; }
-
-        [ForeignKey(nameof(Role))]
-        public int RoleId { get; set; }
-        public Role Role { get; set; }
+        public IList<RoleForms> RoleForms { get; set; }
     }
 }

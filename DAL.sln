@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedLib", "SharedLib\Shar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{19336F6C-A874-4621-8C38-B9980EC507D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSClient", "POSClient\POSClient.csproj", "{AC3AC000-4061-47B6-8DF5-9A943044FC77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{19336F6C-A874-4621-8C38-B9980EC507D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19336F6C-A874-4621-8C38-B9980EC507D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19336F6C-A874-4621-8C38-B9980EC507D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC3AC000-4061-47B6-8DF5-9A943044FC77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC3AC000-4061-47B6-8DF5-9A943044FC77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC3AC000-4061-47B6-8DF5-9A943044FC77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC3AC000-4061-47B6-8DF5-9A943044FC77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

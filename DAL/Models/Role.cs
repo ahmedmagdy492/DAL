@@ -14,5 +14,6 @@ namespace DAL.Models
 
         public IList<User> Users { get; set; }
         public IList<FormView> FormViews { get; set; }
+        public IList<RoleForms> RoleForms { get; set; }
     }
 }

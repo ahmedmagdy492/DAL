@@ -21,5 +21,13 @@ namespace BLL.Services
         /// <param name="user"></param>
         /// <returns>Returns the created user in case of failure it returns null</returns>
         Task<User> Register(User user);
+
+        /// <summary>
+        /// Checks if the application is the first time to open if so an admin account should be registered otherwise a normal login
+        /// </summary>
+        /// <returns>
+        /// Returns true if no users yet, otherwise returns false
+        /// </returns>
+        bool IsFirstTime();
     }
 }
