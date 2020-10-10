@@ -42,8 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Strings.cs" />
+    <Compile Include="Theme.cs" />
     <Compile Include="UnitOfWorkCreator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ColorsCollection.cs" />
     <Compile Include="ViewModels\SendingEmailViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

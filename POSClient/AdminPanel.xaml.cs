@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SharedLib;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace POSClient
 {
@@ -24,6 +17,11 @@ namespace POSClient
         {
             InitializeComponent();
             this.userName = userName;
+            background_pnl.Background = new LinearGradientBrush(
+                Color.FromRgb(Theme.BackColor.R1, Theme.BackColor.G1, Theme.BackColor.B1),
+                Color.FromRgb(Theme.BackColor.R2, Theme.BackColor.G2, Theme.BackColor.B2),
+                190
+                );
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -57,6 +55,22 @@ namespace POSClient
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void btn_products_MouseEnter(object sender, MouseEventArgs e)
+        {
+            ((Grid)sender).Background = new SolidColorBrush(Color.FromRgb(128, 203, 196));
+        }
+
+        private void btn_products_MouseLeave(object sender, MouseEventArgs e)
+        {
+            ((Grid)sender).Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+        }
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            OrdersSettings orderFrm = new OrdersSettings();
+            orderFrm.ShowDialog();
         }
     }
 }

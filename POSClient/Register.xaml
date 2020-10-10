@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Register" Height="593.424" Width="800" FontSize="16" MaxWidth="800" MaxHeight="593.424" Loaded="Window_Loaded">
     <Grid>
-        <Grid Margin="0,0,-0.4,0">
+        <Grid x:Name="background_pnl" Margin="0,0,-0.4,0">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF009688" Offset="0"/>
@@ -31,7 +31,6 @@
             </Grid>
             <TextBlock HorizontalAlignment="Left" Margin="296,146,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" RenderTransformOrigin="0.482,-0.348" Foreground="#FFBFB7B7"/>
             <TextBox x:Name="txt_username" HorizontalAlignment="Left" Height="23" Margin="296,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" BorderThickness="0,0,0,1"/>
-            <TextBlock HorizontalAlignment="Left" Margin="10,541,0,0" TextWrapping="Wrap" Text="© Migo Systems" VerticalAlignment="Top" RenderTransformOrigin="0.482,-0.348" Foreground="White" FontSize="10"/>
             <Image HorizontalAlignment="Left" Height="62" Margin="361,50,0,0" VerticalAlignment="Top" Width="64" Source="icons8_male_user_64px.png" RenderTransformOrigin="0.928,0.524"/>
 
         </Grid>

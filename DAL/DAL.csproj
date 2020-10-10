@@ -60,8 +60,13 @@
     <Compile Include="Migrations\202010081401472_addedRoleFormsModel.designer.cs">
       <DependentUpon>202010081401472_addedRoleFormsModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010091351055_addedIsOnlineAttributeToBranchModel.cs" />
+    <Compile Include="Migrations\202010091351055_addedIsOnlineAttributeToBranchModel.designer.cs">
+      <DependentUpon>202010091351055_addedIsOnlineAttributeToBranchModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\FormView.cs" />
     <Compile Include="Models\Order.cs" />
@@ -85,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010081401472_addedRoleFormsModel.resx">
       <DependentUpon>202010081401472_addedRoleFormsModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010091351055_addedIsOnlineAttributeToBranchModel.resx">
+      <DependentUpon>202010091351055_addedIsOnlineAttributeToBranchModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

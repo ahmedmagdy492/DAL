@@ -1,11 +1,6 @@
 ﻿using DAL.Data;
 using DAL.Models;
 using DAL.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL
 {
@@ -20,6 +15,7 @@ namespace DAL
         private IRepository<Order> _orderRepo;
         private IRepository<OrderItems> _orderItemsRepo;
         private IRepository<RoleForms> _roleFormsRepo;
+        private IRepository<Branch> _branchRepo;
 
         public UnitOfWork()
         {
@@ -94,6 +90,12 @@ namespace DAL
             if (_roleFormsRepo == null)
                 _roleFormsRepo = new Repository<RoleForms>(_context);
             return _roleFormsRepo;
+        }
+        public IRepository<Branch> CreateBranchRepo()
+        {
+            if (_branchRepo == null)
+                _branchRepo = new Repository<Branch>(_context);
+            return _branchRepo;
         }
     }
 }

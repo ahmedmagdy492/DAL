@@ -1,0 +1,17 @@
+﻿<Window x:Class="POSClient.OrdersSettings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:POSClient"
+        mc:Ignorable="d"
+        Title="OrdersSettings" Height="450" Width="800" Loaded="Window_Loaded" WindowStartupLocation="CenterOwner">
+    <Grid x:Name="background_pnl" Background="#FFFCF9F9">
+        <CheckBox x:Name="onlineOrder_chck" FontSize="20" Content="Online Ordering" HorizontalAlignment="Left" Margin="37,150,0,0" VerticalAlignment="Top" Checked="onlineOrder_settings_Checked" Foreground="#000000" Width="224"/>
+        <GroupBox FontSize="20" Header="Branch" HorizontalAlignment="Left" Height="88" Margin="10,10,0,0" VerticalAlignment="Top" Width="475">
+            <ComboBox x:Name="cmb_branches" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="244" Height="34" Foreground="#000000"/>
+        </GroupBox>
+        <GroupBox FontSize="20" Header="Enable Online Orders" HorizontalAlignment="Left" Height="100" Margin="10,103,0,0" VerticalAlignment="Top" Width="475"/>
+        <Button x:Name="btn_AddBranch" FontSize="20" Content="Add New Branch" HorizontalAlignment="Left" Margin="299,44,0,0" VerticalAlignment="Top" Width="159" Height="35" Click="btn_AddBranch_Click"/>
+    </Grid>
+</Window>

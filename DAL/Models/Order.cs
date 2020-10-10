@@ -11,9 +11,15 @@ namespace DAL.Models
     {
         public DateTime OrderDate { get; set; }
 
+        [Column(Order = 0)]
         [ForeignKey(nameof(User))]
         public int UserId { get; set; }
         public User User { get; set; }
+
+        [Column(Order = 1)]
+        [ForeignKey(nameof(Branch))]
+        public int BranchId { get; set; }
+        public Branch Branch { get; set; }
 
         public IList<OrderItems> OrderItems { get; set; }
     }

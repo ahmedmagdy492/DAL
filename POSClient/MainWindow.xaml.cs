@@ -1,4 +1,5 @@
 ﻿using BLL.Services;
+using SharedLib;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,6 +20,12 @@ namespace POSClient
             InitializeComponent();
             _authService = new AuthService(new Sha256Hashing());
             _roleService = new RoleService();
+
+            background_pnl.Background = new LinearGradientBrush(
+                Color.FromRgb(Theme.BackColor.R1, Theme.BackColor.G1, Theme.BackColor.B1),
+                Color.FromRgb(Theme.BackColor.R2, Theme.BackColor.G2, Theme.BackColor.B2),
+                190
+                );
         }
 
         private bool CheckValidity()

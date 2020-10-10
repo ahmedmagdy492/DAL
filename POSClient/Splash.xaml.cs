@@ -1,4 +1,5 @@
 ﻿using BLL.Services;
+using SharedLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,11 @@ namespace POSClient
         {
             InitializeComponent();
             _authService = new AuthService(new Sha256Hashing());
+            background_pnl.Background = new LinearGradientBrush(
+                Color.FromRgb(Theme.BackColor.R1, Theme.BackColor.G1, Theme.BackColor.B1),
+                Color.FromRgb(Theme.BackColor.R2, Theme.BackColor.G2, Theme.BackColor.B2),
+                190
+                );
         }
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)

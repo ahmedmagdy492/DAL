@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="AdminPanel" Height="600.449" Width="1291.587" FontSize="16" MaxHeight="600.449" MaxWidth="1291.587" Closing="Window_Closing" Loaded="Window_Loaded">
     <Grid>
-        <Grid Margin="0,0,-0.4,-6">
+        <Grid x:Name="background_pnl" Margin="0,0,-0.4,-6">
             <Grid.RowDefinitions>
                 <RowDefinition Height="275*"/>
                 <RowDefinition Height="302*"/>
@@ -25,21 +25,21 @@
             <Image HorizontalAlignment="Left" Height="42" Margin="1234,2,0,0" VerticalAlignment="Top" Width="41" Source="icons8_male_user_60px.png"/>
             <TextBlock x:Name="lbl_username" HorizontalAlignment="Left" Margin="1091,10,0,0" TextWrapping="Wrap" Text="Admin" VerticalAlignment="Top" RenderTransformOrigin="1.963,0.414"/>
             <Grid HorizontalAlignment="Left" Height="100" Margin="490,83.2,0,0" VerticalAlignment="Top" Width="100" Grid.Row="1"/>
-            <Grid HorizontalAlignment="Left" Height="126" Margin="256,147,0,0" VerticalAlignment="Top" Width="260" Background="#FFFDFBFB">
+            <Grid x:Name="btn_products" HorizontalAlignment="Left" Height="126" Margin="256,147,0,0" VerticalAlignment="Top" Width="260" Background="#FFFDFBFB" Cursor="Hand" MouseEnter="btn_products_MouseEnter" MouseLeave="btn_products_MouseLeave">
                 <Grid.Effect>
                     <DropShadowEffect Color="#FFD7D3D3"/>
                 </Grid.Effect>
                 <TextBlock HorizontalAlignment="Left" Margin="81,10,0,0" TextWrapping="Wrap" Text="Products" VerticalAlignment="Top" FontSize="25" RenderTransformOrigin="0.432,-1.702"/>
                 <Image HorizontalAlignment="Left" Height="61" Margin="100,48,0,0" VerticalAlignment="Top" Width="60" Source="icons8_product_240px.png" RenderTransformOrigin="1.76,0.466"/>
             </Grid>
-            <Grid HorizontalAlignment="Left" Height="126" Margin="562,147,0,0" VerticalAlignment="Top" Width="260" Background="#FFFDFBFB">
+            <Grid HorizontalAlignment="Left" Height="126" Margin="562,147,0,0" VerticalAlignment="Top" Width="260" Background="#FFFDFBFB" Cursor="Hand" MouseEnter="btn_products_MouseEnter" MouseLeave="btn_products_MouseLeave">
                 <Grid.Effect>
                     <DropShadowEffect Color="#FFD7D3D3"/>
                 </Grid.Effect>
                 <TextBlock HorizontalAlignment="Left" Margin="101,9,0,0" TextWrapping="Wrap" Text="Roles" VerticalAlignment="Top" FontSize="25" RenderTransformOrigin="0.432,-1.702"/>
                 <Image HorizontalAlignment="Left" Height="61" Margin="100,48,0,0" VerticalAlignment="Top" Width="60" Source="icons8_people_52px.png" RenderTransformOrigin="1.76,0.466"/>
             </Grid>
-            <Grid HorizontalAlignment="Left" Height="126" Margin="259,58.2,0,0" VerticalAlignment="Top" Width="260" Background="#FFFDFBFB" Grid.Row="1">
+            <Grid HorizontalAlignment="Left" Height="126" Margin="259,58.2,0,0" VerticalAlignment="Top" Width="260" Background="#FFFDFBFB" Grid.Row="1" Cursor="Hand" MouseEnter="btn_products_MouseEnter" MouseLeave="btn_products_MouseLeave">
                 <Grid.Effect>
                     <DropShadowEffect Color="#FFD7D3D3"/>
                 </Grid.Effect>
@@ -58,21 +58,28 @@
                 <Image HorizontalAlignment="Left" Height="36" Margin="14,87,0,0" VerticalAlignment="Top" Width="29" Source="icons8_login_128px.png" RenderTransformOrigin="-0.717,-3.256"/>
                 <Image HorizontalAlignment="Left" Height="39" Margin="12,139,0,0" VerticalAlignment="Top" Width="39" Source="icons8_exit_60px.png" RenderTransformOrigin="-2.031,-3.251"/>
             </Grid>
+            <Grid HorizontalAlignment="Left" Height="126" Margin="565,54.8,0,0" VerticalAlignment="Top" Width="260" Background="#FFFDFBFB" Grid.Row="1" Cursor="Hand" MouseLeave="btn_products_MouseLeave" MouseEnter="btn_products_MouseEnter">
+                <Grid.Effect>
+                    <DropShadowEffect Color="#FFD7D3D3"/>
+                </Grid.Effect>
+                <TextBlock HorizontalAlignment="Left" Margin="86,10,0,0" TextWrapping="Wrap" Text="Reports" VerticalAlignment="Top" FontSize="25" RenderTransformOrigin="0.432,-1.702"/>
+                <Image HorizontalAlignment="Left" Height="61" Margin="100,48,0,0" VerticalAlignment="Top" Width="60" Source="icons8_download_graph_report_100px.png" RenderTransformOrigin="1.76,0.466"/>
+            </Grid>
 
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="126" Margin="860,147,0,0" VerticalAlignment="Top" Width="260" Background="#FFFDFBFB">
+        <Grid HorizontalAlignment="Left" Height="126" Margin="860,147,0,0" VerticalAlignment="Top" Width="260" Background="#FFFDFBFB" Cursor="Hand" MouseLeave="btn_products_MouseLeave" MouseEnter="btn_products_MouseEnter">
             <Grid.Effect>
                 <DropShadowEffect Color="#FFD7D3D3"/>
             </Grid.Effect>
             <TextBlock HorizontalAlignment="Left" Margin="101,9,0,0" TextWrapping="Wrap" Text="Users" VerticalAlignment="Top" FontSize="25" RenderTransformOrigin="0.432,-1.702"/>
             <Image HorizontalAlignment="Left" Height="61" Margin="100,48,0,0" VerticalAlignment="Top" Width="60" Source="icons8_add_user_group_man_man_100px.png" RenderTransformOrigin="1.76,0.466"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="126" Margin="565,330,0,0" VerticalAlignment="Top" Width="260" Background="#FFFDFBFB">
+        <Grid HorizontalAlignment="Left" Height="126" Margin="860,327,0,0" VerticalAlignment="Top" Width="260" Background="#FFFDFBFB" Cursor="Hand" MouseEnter="btn_products_MouseEnter" MouseLeave="btn_products_MouseLeave" MouseDown="Grid_MouseDown">
             <Grid.Effect>
                 <DropShadowEffect Color="#FFD7D3D3"/>
             </Grid.Effect>
-            <TextBlock HorizontalAlignment="Left" Margin="86,10,0,0" TextWrapping="Wrap" Text="Reports" VerticalAlignment="Top" FontSize="25" RenderTransformOrigin="0.432,-1.702"/>
-            <Image HorizontalAlignment="Left" Height="61" Margin="100,48,0,0" VerticalAlignment="Top" Width="60" Source="icons8_download_graph_report_100px.png" RenderTransformOrigin="1.76,0.466"/>
+            <TextBlock HorizontalAlignment="Left" Margin="86,10,0,0" TextWrapping="Wrap" Text="Orders" VerticalAlignment="Top" FontSize="25" RenderTransformOrigin="0.432,-1.702"/>
+            <Image HorizontalAlignment="Left" Height="61" Margin="100,48,0,0" VerticalAlignment="Top" Width="60" Source="icons8_order_history_60px.png" RenderTransformOrigin="1.76,0.466"/>
         </Grid>
 
     </Grid>

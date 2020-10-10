@@ -68,8 +68,14 @@
     <Compile Include="AdminPanel.xaml.cs">
       <DependentUpon>AdminPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Branch.xaml.cs">
+      <DependentUpon>Branch.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FirstTime.xaml.cs">
       <DependentUpon>FirstTime.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OrdersSettings.xaml.cs">
+      <DependentUpon>OrdersSettings.xaml</DependentUpon>
     </Compile>
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
@@ -78,6 +84,10 @@
       <DependentUpon>Splash.xaml</DependentUpon>
     </Compile>
     <Page Include="AdminPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Branch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -97,6 +107,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="OrdersSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Register.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -191,6 +205,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="icons8_exit_60px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8_order_history_60px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8_add_64px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
