@@ -14,12 +14,14 @@ namespace BLL.Services
         private readonly IRepository<Role> _roleRepo;
         private readonly IRepository<RoleForms> _formRepo;
         private readonly IRepository<User> _userRepo;
+        private readonly UnitOfWork _unitOfWork;
+
         public RoleService()
         {
-            UnitOfWork unitOfWork = SharedLib.UnitOfWorkCreator.Instance;
-            _roleRepo = unitOfWork.CreateRoleRepo();
-            _formRepo = unitOfWork.CreateRoleFormsRepo();
-            _userRepo = unitOfWork.CreateUserRepo();
+            _unitOfWork = SharedLib.UnitOfWorkCreator.Instance;
+            _roleRepo = _unitOfWork.CreateRoleRepo();
+            _formRepo = _unitOfWork.CreateRoleFormsRepo();
+            _userRepo = _unitOfWork.CreateUserRepo();
         }
 
         public bool AddFormToRole(int roleId, int formId)
@@ -36,7 +38,7 @@ namespace BLL.Services
                 RoleId = roleId
             };
             _formRepo.Add(newRoleForm);
-            _formRepo.Commit();
+            _unitOfWork.Commit();
             return true;
         }
 
@@ -48,7 +50,7 @@ namespace BLL.Services
             if (existingRole != null) return null;
 
             _roleRepo.Add(role);
-            _roleRepo.Commit();
+            _unitOfWork.Commit();
             return role;
         }
 
@@ -60,7 +62,7 @@ namespace BLL.Services
             // changing the user role id to be set to the one
             user.RoleId = roleId;
             _userRepo.Update(user);
-            _userRepo.Commit();
+            _unitOfWork.Commit();
             return true;
         }
 
@@ -90,7 +92,7 @@ namespace BLL.Services
             if (roleForm == null) return false;
 
             _formRepo.Delete(roleForm);
-            _formRepo.Commit();
+            _unitOfWork.Commit();
             return true;
         }
 
@@ -102,7 +104,7 @@ namespace BLL.Services
             if (existingRole == null) return;
 
             _roleRepo.Delete(role);
-            _roleRepo.Commit();
+            _unitOfWork.Commit();
         }
     }
 }

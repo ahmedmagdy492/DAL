@@ -14,12 +14,16 @@ namespace POSClient
     {
         private readonly IAuthService _authService;
         private readonly IRoleService _roleService;
+        private readonly IUserService _userService;
+        private readonly IBranchService _branchService;
 
         public MainWindow()
         {
             InitializeComponent();
             _authService = new AuthService(new Sha256Hashing());
             _roleService = new RoleService();
+            _userService = new UserService();
+            _branchService = new BranchService();
 
             background_pnl.Background = new LinearGradientBrush(
                 Color.FromRgb(Theme.BackColor.R1, Theme.BackColor.G1, Theme.BackColor.B1),
@@ -99,6 +103,29 @@ namespace POSClient
                     else
                     {
                         // normal user
+                        var loggedInUser = await _userService.GetUserByUsername(txt_username.Text);
+                        
+                        if(loggedInUser != null && !loggedInUser.IsCustomer)
+                        {
+                            // check what is the branch that the user belongs to
+                            var currentBranch = _branchService.GetById(loggedInUser.BranchId.Value);
+
+                            if(currentBranch != null)
+                            {
+                                // check if the online ordering is enabled or not
+                                if(!currentBranch.IsOnline)
+                                {
+                                    invoice invoiceFrm = new invoice(txt_username.Text, currentBranch);
+                                    invoiceFrm.Show();
+                                }
+                                else
+                                {
+                                    // if online show the online ordering form
+                                    onlineOrdersFrm onlineOrdersFrm = new onlineOrdersFrm();
+                                    onlineOrdersFrm.Show();
+                                }
+                            }
+                        }
                     }
                 }
                 UnDimForm();

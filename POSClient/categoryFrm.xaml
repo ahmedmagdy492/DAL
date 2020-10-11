@@ -1,0 +1,18 @@
+﻿<Window x:Class="POSClient.categoryFrm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:POSClient"
+        mc:Ignorable="d"
+        Title="Categories" FontSize="16" Height="330.569" MaxHeight="330.569" MaxWidth="358.531" Width="358.531" Loaded="Window_Loaded_1" Icon="icon.png">
+    <Grid>
+        <Grid HorizontalAlignment="Left" Height="79" VerticalAlignment="Top" Width="353" Margin="0,0,-1,0">
+            <Label Content="Name" HorizontalAlignment="Left" Margin="10,24,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="txt_name" HorizontalAlignment="Left" Height="23" Margin="94,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="0,0,0,1"/>
+            <Button x:Name="btn_addCategory" Content="Add" HorizontalAlignment="Left" Margin="237,28,0,0" VerticalAlignment="Top" Width="106" Click="btn_addCategory_Click" BorderThickness="0" Background="#FF141414" Foreground="#FFFCFCFC" Height="28"/>
+        </Grid>
+        <DataGrid x:Name="dgv_categories" IsReadOnly="True" HorizontalAlignment="Left" Height="217" Margin="0,84,0,-0.2" VerticalAlignment="Top" Width="352"/>
+
+    </Grid>
+</Window>

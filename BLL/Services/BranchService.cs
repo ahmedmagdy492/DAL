@@ -12,15 +12,16 @@ namespace BLL.Services
     public class BranchService : IBranchService
     {
         private IRepository<Branch> _branchRepo;
+        private readonly UnitOfWork _unitOfWork;
         public BranchService()
         {
-            UnitOfWork unitOfWork = UnitOfWorkCreator.Instance;
-            _branchRepo = unitOfWork.CreateBranchRepo();
+            _unitOfWork = UnitOfWorkCreator.Instance;
+            _branchRepo = _unitOfWork.CreateBranchRepo();
         }
         public Branch Add(Branch model)
         {
             var branch = _branchRepo.Add(model);
-            _branchRepo.Commit();
+            _unitOfWork.Commit();
             return branch;
         }
 
@@ -29,18 +30,13 @@ namespace BLL.Services
             var branch = _branchRepo.GetById(branchId);
             branch.IsOnline = isOnline;
             _branchRepo.Update(branch);
-            _branchRepo.Commit();
-        }
-
-        public bool Commit()
-        {
-            return _branchRepo.Commit();
+            _unitOfWork.Commit();
         }
 
         public void Delete(Branch model)
         {
             _branchRepo.Delete(model);
-            _branchRepo.Commit();
+            _unitOfWork.Commit();
         }
 
         public IEnumerable<Branch> GetAll()
@@ -55,7 +51,15 @@ namespace BLL.Services
 
         public Branch Update(Branch model)
         {
-            return _branchRepo.Update(model);
+            var updatedModel = _branchRepo.Update(model);
+            _unitOfWork.Commit();
+            return updatedModel;
+        }
+
+        public bool IsOnlineOrderingEnabled(int currentBranchId)
+        {
+            var currentBranch = _branchRepo.GetById(currentBranchId);
+            return currentBranch == null ? false : currentBranch.IsOnline;
         }
     }
 }

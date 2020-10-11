@@ -97,5 +97,9 @@ namespace DAL
                 _branchRepo = new Repository<Branch>(_context);
             return _branchRepo;
         }
+        public bool Commit()
+        {
+            return _context.SaveChanges() > 0;
+        }
     }
 }

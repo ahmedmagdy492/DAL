@@ -33,6 +33,8 @@ namespace POSClient
             _branchService = new BranchService();
         }
 
+        public ObservableCollection<DAL.Models.Branch> branches { get; private set; }
+
         private bool CheckValidity()
         {
             bool isValid = true;
@@ -78,6 +80,15 @@ namespace POSClient
                 {
                     _branchService.Add(branch);
                 });
+
+                // getting all branches
+                branches = null;
+
+                await Task.Run(() =>
+                {
+                    branches = new ObservableCollection<DAL.Models.Branch>(_branchService.GetAll());
+                });
+                dgv_branches.ItemsSource = branches;
 
                 btn_add.IsEnabled = true;
                 btn_add.Content = "Add";

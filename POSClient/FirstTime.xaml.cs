@@ -2,6 +2,7 @@
 using DAL.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +28,7 @@ namespace POSClient
         public FirstTime()
         {
             InitializeComponent();
-            this._roleService = new RoleService();
+            _roleService = new RoleService();
             _userService = new UserService();
         }
 
@@ -45,6 +46,11 @@ namespace POSClient
             }
             
             return isValid;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
@@ -68,7 +74,8 @@ namespace POSClient
                     Name = txt_username.Text,
                     Username = txt_username.Text,
                     Password = txt_password.Password,
-                    RoleId = createdRole.Id
+                    RoleId = createdRole.Id,
+                    IsCustomer = false
                 };
 
                 await Task.Run(() =>
@@ -92,6 +99,6 @@ namespace POSClient
         {
             // closing the first window
             Application.Current.Windows[0].Close();
-        }
+        }        
     }
 }

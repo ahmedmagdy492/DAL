@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POSClient"
         mc:Ignorable="d"
-        Title="Branch" Height="379.621" Width="463.033" Loaded="Window_Loaded">
+        Title="Branch" Height="379.621" Width="463.033" Loaded="Window_Loaded" MaxHeight="379.621" MaxWidth="463.033" Icon="icon.png">
     <Grid Background="white">
         <Grid x:Name="background_pnl" HorizontalAlignment="Left" Height="350" VerticalAlignment="Top" Width="469" Margin="0,0,-12.2,0">
-            <Label Content="Name" FontSize="16" HorizontalAlignment="Left" Margin="20,8,0,0" VerticalAlignment="Top" Width="60"/>
-            <TextBox x:Name="txt_name" FontSize="16" HorizontalAlignment="Left" Height="23" Margin="102,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.176,-2.529"/>
-            <CheckBox x:Name="chk_onlineOrders" FontSize="16" Content="Enable Online Orders" HorizontalAlignment="Left" Margin="257,8,0,0" VerticalAlignment="Top"/>
-            <Button x:Name="btn_add" FontSize="16" Content="Add" HorizontalAlignment="Left" Margin="291,48,0,0" VerticalAlignment="Top" Width="134" Click="btn_add_Click"/>
-            <DataGrid x:Name="dgv_branches" HorizontalAlignment="Left" Height="248" Margin="0,102,0,0" VerticalAlignment="Top" Width="459"/>
-            <Label FontSize="16" Content="Location" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.458,0.032"/>
-            <TextBox x:Name="txt_location" FontSize="16" HorizontalAlignment="Left" Height="23" Margin="102,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Name" FontSize="16" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Width="60"/>
+            <TextBox x:Name="txt_name" FontSize="16" HorizontalAlignment="Left" Height="23" Margin="102,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.176,-2.529" BorderThickness="0,0,0,1"/>
+            <CheckBox x:Name="chk_onlineOrders" FontSize="16" Content="Enable Online Orders" HorizontalAlignment="Left" Margin="257,14,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="btn_add" FontSize="16" Content="Add" HorizontalAlignment="Left" Margin="265,63,0,0" VerticalAlignment="Top" Width="168" Click="btn_add_Click" BorderThickness="0" Background="#FF1A1919" Foreground="#FFFCFCFC" Height="34"/>
+            <DataGrid x:Name="dgv_branches" IsReadOnly="True" HorizontalAlignment="Left" Height="248" Margin="0,102,0,0" VerticalAlignment="Top" Width="459" BorderBrush="Black" BorderThickness="0,0,0,1" Background="{x:Null}"/>
+            <Label FontSize="16" Content="Location" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.458,0.032"/>
+            <TextBox x:Name="txt_location" FontSize="16" HorizontalAlignment="Left" Height="23" Margin="102,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="0,0,0,1"/>
         </Grid>
     </Grid>
 </Window>

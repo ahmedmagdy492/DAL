@@ -24,6 +24,11 @@ namespace DAL.Models
         public int RoleId { get; set; }
         public Role Role { get; set; }
 
+        [ForeignKey(nameof(Branch))]
+        public int? BranchId { get; set; }
+        public Branch Branch { get; set; }
+        public bool IsCustomer { get; set; }
+
         public IList<Order> Orders { get; set; }
     }
 }

@@ -13,9 +13,11 @@ namespace BLL.Services
     {
         private readonly IRepository<User> _userRepo;
         private readonly IPasswordHashing _passwordHashing;
+        private readonly UnitOfWork _unitOfWork;
+
         public UserService()
         {
-            UnitOfWork _unitOfWork = SharedLib.UnitOfWorkCreator.Instance;
+            _unitOfWork = SharedLib.UnitOfWorkCreator.Instance;
             _userRepo = _unitOfWork.CreateUserRepo();
             _passwordHashing = new Sha256Hashing();
         }
@@ -23,7 +25,7 @@ namespace BLL.Services
         public User AddOrUpdate(User user)
         {
             var updatedUser = _userRepo.Update(user);
-            _userRepo.Commit();
+            _unitOfWork.Commit();
             return updatedUser;
         }
 
@@ -31,7 +33,7 @@ namespace BLL.Services
         {
             user.Password = _passwordHashing.Hash(user.Password);
             _userRepo.Add(user);
-            _userRepo.Commit();
+            _unitOfWork.Commit();
             return user;
         }
 

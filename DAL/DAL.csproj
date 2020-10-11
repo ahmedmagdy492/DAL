@@ -64,6 +64,22 @@
     <Compile Include="Migrations\202010091351055_addedIsOnlineAttributeToBranchModel.designer.cs">
       <DependentUpon>202010091351055_addedIsOnlineAttributeToBranchModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010101143330_addedTotalInvoiceValueAttrInOrderModel.cs" />
+    <Compile Include="Migrations\202010101143330_addedTotalInvoiceValueAttrInOrderModel.designer.cs">
+      <DependentUpon>202010101143330_addedTotalInvoiceValueAttrInOrderModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010110952421_MadeUsersBelongsToBranches.cs" />
+    <Compile Include="Migrations\202010110952421_MadeUsersBelongsToBranches.designer.cs">
+      <DependentUpon>202010110952421_MadeUsersBelongsToBranches.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010111122127_madeBranchIdInUserNullable.cs" />
+    <Compile Include="Migrations\202010111122127_madeBranchIdInUserNullable.designer.cs">
+      <DependentUpon>202010111122127_madeBranchIdInUserNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010111757546_addedIsCustomerAttrToUser.cs" />
+    <Compile Include="Migrations\202010111757546_addedIsCustomerAttrToUser.designer.cs">
+      <DependentUpon>202010111757546_addedIsCustomerAttrToUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\Branch.cs" />
@@ -93,6 +109,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010091351055_addedIsOnlineAttributeToBranchModel.resx">
       <DependentUpon>202010091351055_addedIsOnlineAttributeToBranchModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010101143330_addedTotalInvoiceValueAttrInOrderModel.resx">
+      <DependentUpon>202010101143330_addedTotalInvoiceValueAttrInOrderModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010110952421_MadeUsersBelongsToBranches.resx">
+      <DependentUpon>202010110952421_MadeUsersBelongsToBranches.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010111122127_madeBranchIdInUserNullable.resx">
+      <DependentUpon>202010111122127_madeBranchIdInUserNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010111757546_addedIsCustomerAttrToUser.resx">
+      <DependentUpon>202010111757546_addedIsCustomerAttrToUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

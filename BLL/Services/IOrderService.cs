@@ -8,9 +8,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Services
 {
-    public interface IBranchService : IRepository<Branch>
+    public interface IOrderService : IRepository<Order>
     {
-        void ChangeOnlineStatus(int branchId, bool isOnline);
-        bool IsOnlineOrderingEnabled(int currentBranchId);
     }
 }

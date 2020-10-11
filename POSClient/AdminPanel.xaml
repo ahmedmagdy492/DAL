@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POSClient"
         mc:Ignorable="d"
-        Title="AdminPanel" Height="600.449" Width="1291.587" FontSize="16" MaxHeight="600.449" MaxWidth="1291.587" Closing="Window_Closing" Loaded="Window_Loaded">
+        Title="AdminPanel" Height="600.449" Width="1291.587" FontSize="16" MaxHeight="600.449" MaxWidth="1291.587" Closing="Window_Closing" Loaded="Window_Loaded" Icon="icon.png">
     <Grid>
         <Grid x:Name="background_pnl" Margin="0,0,-0.4,-6">
             <Grid.RowDefinitions>
@@ -22,17 +22,17 @@
             </Grid.Background>
             <Grid HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="1285" Background="White"/>
             <Image x:Name="img_Bar" HorizontalAlignment="Left" Height="25" Margin="10,10,0,0" VerticalAlignment="Top" Width="23" Source="icons8_menu_100px_1.png" MouseDown="Image_MouseDown"/>
-            <Image HorizontalAlignment="Left" Height="42" Margin="1234,2,0,0" VerticalAlignment="Top" Width="41" Source="icons8_male_user_60px.png"/>
+            <Image HorizontalAlignment="Left" Height="42" Margin="1234,2,0,0" VerticalAlignment="Top" Width="41" Source="black user.png"/>
             <TextBlock x:Name="lbl_username" HorizontalAlignment="Left" Margin="1091,10,0,0" TextWrapping="Wrap" Text="Admin" VerticalAlignment="Top" RenderTransformOrigin="1.963,0.414"/>
             <Grid HorizontalAlignment="Left" Height="100" Margin="490,83.2,0,0" VerticalAlignment="Top" Width="100" Grid.Row="1"/>
-            <Grid x:Name="btn_products" HorizontalAlignment="Left" Height="126" Margin="256,147,0,0" VerticalAlignment="Top" Width="260" Background="#FFFDFBFB" Cursor="Hand" MouseEnter="btn_products_MouseEnter" MouseLeave="btn_products_MouseLeave">
+            <Grid x:Name="btn_products" HorizontalAlignment="Left" Height="126" Margin="256,147,0,0" VerticalAlignment="Top" Width="260" Background="#FFFDFBFB" Cursor="Hand" MouseEnter="btn_products_MouseEnter" MouseLeave="btn_products_MouseLeave" MouseDown="btn_products_MouseDown">
                 <Grid.Effect>
                     <DropShadowEffect Color="#FFD7D3D3"/>
                 </Grid.Effect>
                 <TextBlock HorizontalAlignment="Left" Margin="81,10,0,0" TextWrapping="Wrap" Text="Products" VerticalAlignment="Top" FontSize="25" RenderTransformOrigin="0.432,-1.702"/>
                 <Image HorizontalAlignment="Left" Height="61" Margin="100,48,0,0" VerticalAlignment="Top" Width="60" Source="icons8_product_240px.png" RenderTransformOrigin="1.76,0.466"/>
             </Grid>
-            <Grid HorizontalAlignment="Left" Height="126" Margin="562,147,0,0" VerticalAlignment="Top" Width="260" Background="#FFFDFBFB" Cursor="Hand" MouseEnter="btn_products_MouseEnter" MouseLeave="btn_products_MouseLeave">
+            <Grid x:Name="btn_roles" HorizontalAlignment="Left" Height="126" Margin="562,147,0,0" VerticalAlignment="Top" Width="260" Background="#FFFDFBFB" Cursor="Hand" MouseEnter="btn_products_MouseEnter" MouseLeave="btn_products_MouseLeave" MouseDown="btn_roles_MouseDown">
                 <Grid.Effect>
                     <DropShadowEffect Color="#FFD7D3D3"/>
                 </Grid.Effect>
@@ -65,9 +65,10 @@
                 <TextBlock HorizontalAlignment="Left" Margin="86,10,0,0" TextWrapping="Wrap" Text="Reports" VerticalAlignment="Top" FontSize="25" RenderTransformOrigin="0.432,-1.702"/>
                 <Image HorizontalAlignment="Left" Height="61" Margin="100,48,0,0" VerticalAlignment="Top" Width="60" Source="icons8_download_graph_report_100px.png" RenderTransformOrigin="1.76,0.466"/>
             </Grid>
+            <Image HorizontalAlignment="Left" Height="44" Margin="1035,0,0,0" VerticalAlignment="Top" Width="45" Source="logo.png"/>
 
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="126" Margin="860,147,0,0" VerticalAlignment="Top" Width="260" Background="#FFFDFBFB" Cursor="Hand" MouseLeave="btn_products_MouseLeave" MouseEnter="btn_products_MouseEnter">
+        <Grid x:Name="btn_users" HorizontalAlignment="Left" Height="126" Margin="860,147,0,0" VerticalAlignment="Top" Width="260" Background="#FFFDFBFB" Cursor="Hand" MouseLeave="btn_products_MouseLeave" MouseEnter="btn_products_MouseEnter" MouseDown="btn_users_MouseDown">
             <Grid.Effect>
                 <DropShadowEffect Color="#FFD7D3D3"/>
             </Grid.Effect>

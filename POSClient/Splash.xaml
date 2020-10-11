@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POSClient"
         mc:Ignorable="d"
-        Title="Splash" Height="371.09" Width="821.327" WindowStyle="None" WindowStartupLocation="CenterScreen" MaxWidth="821.327" MaxHeight="371.09" Loaded="Window_Loaded">
+        Title="Splash" Height="371.09" Width="821.327" WindowStyle="None" WindowStartupLocation="CenterScreen" MaxWidth="821.327" MaxHeight="371.09" Loaded="Window_Loaded" Icon="icon.png">
     <Grid Height="369" Margin="0,0,-26.8,-4.2" VerticalAlignment="Top">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="342*"/>

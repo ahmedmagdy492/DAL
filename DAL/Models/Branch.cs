@@ -16,5 +16,6 @@ namespace DAL.Models
         public bool IsOnline { get; set; }
 
         public IList<Order> Orders { get; set; }
+        public IList<User> Users { get; set; }
     }
 }

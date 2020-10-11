@@ -14,6 +14,5 @@ namespace DAL.Repository
         TModel Add(TModel model);
         void Delete(TModel model);
         TModel Update(TModel model);
-        bool Commit();
     }
 }

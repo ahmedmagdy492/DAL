@@ -71,17 +71,35 @@
     <Compile Include="Branch.xaml.cs">
       <DependentUpon>Branch.xaml</DependentUpon>
     </Compile>
+    <Compile Include="categoryFrm.xaml.cs">
+      <DependentUpon>categoryFrm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FirstTime.xaml.cs">
       <DependentUpon>FirstTime.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="invoice.xaml.cs">
+      <DependentUpon>invoice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="onlineOrdersFrm.xaml.cs">
+      <DependentUpon>onlineOrdersFrm.xaml</DependentUpon>
     </Compile>
     <Compile Include="OrdersSettings.xaml.cs">
       <DependentUpon>OrdersSettings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="productsFrm.xaml.cs">
+      <DependentUpon>productsFrm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
+    <Compile Include="rolesFrm.xaml.cs">
+      <DependentUpon>rolesFrm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Splash.xaml.cs">
       <DependentUpon>Splash.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="usersFrm.xaml.cs">
+      <DependentUpon>usersFrm.xaml</DependentUpon>
     </Compile>
     <Page Include="AdminPanel.xaml">
       <SubType>Designer</SubType>
@@ -91,7 +109,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="categoryFrm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FirstTime.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="invoice.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -107,7 +133,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="onlineOrdersFrm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="OrdersSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="productsFrm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -115,7 +149,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="rolesFrm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Splash.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="usersFrm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -211,6 +253,27 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="icons8_add_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="white user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="black user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="white bars.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="white knights.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

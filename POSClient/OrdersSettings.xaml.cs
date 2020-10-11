@@ -44,20 +44,50 @@ namespace POSClient
             }
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
             // getting all branches
-            var allBranches = _branchService.GetAll();
-            cmb_branches.ItemsSource = new ObservableCollection<DAL.Models.Branch>(allBranches);
+            ObservableCollection<DAL.Models.Branch> allBranches = null;
+            await Task.Run(() =>
+            {
+                allBranches = new ObservableCollection<DAL.Models.Branch>(_branchService.GetAll());
+            });
+
+            cmb_branches.ItemsSource = allBranches;
             cmb_branches.DisplayMemberPath = "Name";
             cmb_branches.SelectedValuePath = "Id";
-            cmb_branches.SelectedIndex = 1;
+            cmb_branches.SelectedIndex = 0;
         }
 
         private void btn_AddBranch_Click(object sender, RoutedEventArgs e)
         {
             Branch branchFrm = new Branch();
             branchFrm.ShowDialog();
+
+            // getting all branches
+            cmb_branches.ItemsSource = new ObservableCollection<DAL.Models.Branch>(_branchService.GetAll());
+            cmb_branches.DisplayMemberPath = "Name";
+            cmb_branches.SelectedValuePath = "Id";
+            cmb_branches.SelectedIndex = 0;
+        }
+
+        private void btn_TrackOrders_Click(object sender, RoutedEventArgs e)
+        {
+            // show the tracking orders form
+        }
+
+        private void cmb_branches_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var branchId = Convert.ToInt32(cmb_branches.SelectedValue);
+            var branch = _branchService.GetById(branchId);
+
+            onlineOrder_chck.IsChecked = branch.IsOnline;
+        }
+
+        private void onlineOrder_chck_Unchecked(object sender, RoutedEventArgs e)
+        {
+            // changing the online ordering settings
+            _branchService.ChangeOnlineStatus(Convert.ToInt32(cmb_branches.SelectedValue), onlineOrder_chck.IsChecked.Value);
         }
     }
 }

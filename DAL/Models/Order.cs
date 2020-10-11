@@ -15,6 +15,7 @@ namespace DAL.Models
         [ForeignKey(nameof(User))]
         public int UserId { get; set; }
         public User User { get; set; }
+        public double TotalInvoiceValue { get; set; }
 
         [Column(Order = 1)]
         [ForeignKey(nameof(Branch))]

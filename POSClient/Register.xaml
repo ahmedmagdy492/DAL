@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POSClient"
         mc:Ignorable="d"
-        Title="Register" Height="593.424" Width="800" FontSize="16" MaxWidth="800" MaxHeight="593.424" Loaded="Window_Loaded">
+        Title="Register" Height="593.424" Width="800" FontSize="16" MaxWidth="800" MaxHeight="593.424" Loaded="Window_Loaded" Icon="icon.png">
     <Grid>
         <Grid x:Name="background_pnl" Margin="0,0,-0.4,0">
             <Grid.Background>
