@@ -91,5 +91,11 @@ namespace POSClient
             productsFrm productsFrm = new productsFrm();
             productsFrm.ShowDialog();
         }
+
+        private void btn_logging_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Logging logging = new Logging();
+            logging.ShowDialog();
+        }
     }
 }

@@ -80,11 +80,21 @@
     <Compile Include="Migrations\202010111757546_addedIsCustomerAttrToUser.designer.cs">
       <DependentUpon>202010111757546_addedIsCustomerAttrToUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010112054397_addedLoggingModel.cs" />
+    <Compile Include="Migrations\202010112054397_addedLoggingModel.designer.cs">
+      <DependentUpon>202010112054397_addedLoggingModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010112134315_addedImagesForProducts.cs" />
+    <Compile Include="Migrations\202010112134315_addedImagesForProducts.designer.cs">
+      <DependentUpon>202010112134315_addedImagesForProducts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\FormView.cs" />
+    <Compile Include="Models\Image.cs" />
+    <Compile Include="Models\Logging.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderItems.cs" />
     <Compile Include="Models\Product.cs" />
@@ -121,6 +131,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010111757546_addedIsCustomerAttrToUser.resx">
       <DependentUpon>202010111757546_addedIsCustomerAttrToUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010112054397_addedLoggingModel.resx">
+      <DependentUpon>202010112054397_addedLoggingModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010112134315_addedImagesForProducts.resx">
+      <DependentUpon>202010112134315_addedImagesForProducts.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

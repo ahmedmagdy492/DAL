@@ -17,7 +17,7 @@ namespace BLL.Services
 
         public OrderService()
         {
-            _unitOfWork = UnitOfWorkCreator.Instance;
+            _unitOfWork = new UnitOfWork(SharedLib.DBContextCreator.DbContext);
             _orderRepo = _unitOfWork.CreateOrderRepo();
         }
 

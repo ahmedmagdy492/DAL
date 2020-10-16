@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POSClient"
         mc:Ignorable="d"
-        Title="Products" FontSize="16" Height="450" Width="730.688" Loaded="Window_Loaded" Icon="icon.png">
+        Title="Products" FontSize="16" MaxHeight="450" Height="450" Width="730.688" MaxWidth="730.688" Loaded="Window_Loaded" Icon="icon.png">
     <Grid>
-        <Grid HorizontalAlignment="Left" Height="105" VerticalAlignment="Top" Width="724">
+        <Grid HorizontalAlignment="Left" Height="147" VerticalAlignment="Top" Width="724">
             <Label Content="Name" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="txt_prodName" HorizontalAlignment="Left" Height="23" Margin="115,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="0,0,0,1"/>
             <Label Content="Description" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top"/>
@@ -16,10 +16,13 @@
             <TextBox x:Name="txt_price" HorizontalAlignment="Left" Height="23" Margin="374,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" KeyDown="txt_price_KeyDown" BorderThickness="0,0,0,1"/>
             <Label Content="Category" HorizontalAlignment="Left" Margin="287,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.444,1.533"/>
             <ComboBox x:Name="cmb_category" HorizontalAlignment="Left" Margin="374,11,0,0" VerticalAlignment="Top" Width="120"/>
-            <Button x:Name="btn_addProduct" Content="Add" HorizontalAlignment="Left" Margin="513,59,0,10" Width="170" Click="btn_addProduct_Click" BorderThickness="0" Background="#FF181717" Foreground="White"/>
-            <Button x:Name="btn_addCategory" Content="Add Category" HorizontalAlignment="Left" Margin="513,10,0,0" VerticalAlignment="Top" Width="170" Click="btn_addCategory_Click" BorderThickness="0" Background="#FF171616" Foreground="#FFF9F5F5" Height="40"/>
+            <Button x:Name="btn_addProduct" Content="Add" HorizontalAlignment="Left" Margin="513,56,0,51" Width="170" Click="btn_addProduct_Click" BorderThickness="0" Background="#FF181717" Foreground="White"/>
+            <Button x:Name="btn_addCategory" Content="Add Category" HorizontalAlignment="Left" Margin="513,7,0,0" VerticalAlignment="Top" Width="170" Click="btn_addCategory_Click" BorderThickness="0" Background="#FF171616" Foreground="#FFF9F5F5" Height="40"/>
+            <Label Content="Image" HorizontalAlignment="Left" Margin="18,87,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="txt_image" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="115,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderThickness="0,0,0,1"/>
+            <Button x:Name="btn_browse" Content="Browse" HorizontalAlignment="Left" Margin="253,87,0,0" VerticalAlignment="Top" Width="140" Click="btn_browse_Click" BorderThickness="0" Background="#FF171616" Foreground="#FFF9F5F5" Height="35"/>
         </Grid>
-        <DataGrid x:Name="dgv_products" IsReadOnly="True" HorizontalAlignment="Left" Height="310" Margin="0,110,0,0" VerticalAlignment="Top" Width="724"/>
+        <DataGrid x:Name="dgv_products" IsReadOnly="True" HorizontalAlignment="Left" Height="268" Margin="0,152,0,0" VerticalAlignment="Top" Width="724"/>
 
     </Grid>
 </Window>

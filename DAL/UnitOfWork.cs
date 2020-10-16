@@ -16,10 +16,12 @@ namespace DAL
         private IRepository<OrderItems> _orderItemsRepo;
         private IRepository<RoleForms> _roleFormsRepo;
         private IRepository<Branch> _branchRepo;
+        private IRepository<Logging> _loggerRepo;
+        private IRepository<Image> _imageRepo;
 
-        public UnitOfWork()
+        public UnitOfWork(ApplicationDbContext context)
         {
-            _context = new ApplicationDbContext();
+            _context = context;
         }
 
         public IRepository<Category> CreateCategoryRepo()
@@ -96,6 +98,18 @@ namespace DAL
             if (_branchRepo == null)
                 _branchRepo = new Repository<Branch>(_context);
             return _branchRepo;
+        }
+        public IRepository<Logging> CreateLoggerRepo()
+        {
+            if (_loggerRepo == null)
+                _loggerRepo = new Repository<Logging>(_context);
+            return _loggerRepo;
+        }
+        public IRepository<Image> CreateImageRepo()
+        {
+            if (_imageRepo == null)
+                _imageRepo = new Repository<Image>(_context);
+            return _imageRepo;
         }
         public bool Commit()
         {

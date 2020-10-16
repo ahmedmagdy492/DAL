@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSClient", "POSClient\POSClient.csproj", "{AC3AC000-4061-47B6-8DF5-9A943044FC77}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSApi", "POSApi\POSApi.csproj", "{77E0C9C1-19AF-4ACD-9099-E33FA51F25B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{AC3AC000-4061-47B6-8DF5-9A943044FC77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC3AC000-4061-47B6-8DF5-9A943044FC77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC3AC000-4061-47B6-8DF5-9A943044FC77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77E0C9C1-19AF-4ACD-9099-E33FA51F25B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77E0C9C1-19AF-4ACD-9099-E33FA51F25B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77E0C9C1-19AF-4ACD-9099-E33FA51F25B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77E0C9C1-19AF-4ACD-9099-E33FA51F25B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

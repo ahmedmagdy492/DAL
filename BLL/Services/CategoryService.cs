@@ -17,7 +17,7 @@ namespace BLL.Services
 
         public CategoryService()
         {
-            _unitOfWork = UnitOfWorkCreator.Instance;
+            _unitOfWork = new UnitOfWork(DBContextCreator.DbContext);
             _cateRepo = _unitOfWork.CreateCategoryRepo();
         }
 

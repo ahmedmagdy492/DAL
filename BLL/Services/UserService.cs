@@ -17,7 +17,7 @@ namespace BLL.Services
 
         public UserService()
         {
-            _unitOfWork = SharedLib.UnitOfWorkCreator.Instance;
+            _unitOfWork = new UnitOfWork(SharedLib.DBContextCreator.DbContext);
             _userRepo = _unitOfWork.CreateUserRepo();
             _passwordHashing = new Sha256Hashing();
         }

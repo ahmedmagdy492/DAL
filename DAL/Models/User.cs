@@ -30,5 +30,6 @@ namespace DAL.Models
         public bool IsCustomer { get; set; }
 
         public IList<Order> Orders { get; set; }
+        public IList<Logging> Loggings { get; set; }
     }
 }

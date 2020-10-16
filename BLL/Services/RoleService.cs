@@ -18,7 +18,7 @@ namespace BLL.Services
 
         public RoleService()
         {
-            _unitOfWork = SharedLib.UnitOfWorkCreator.Instance;
+            _unitOfWork = new UnitOfWork(SharedLib.DBContextCreator.DbContext);
             _roleRepo = _unitOfWork.CreateRoleRepo();
             _formRepo = _unitOfWork.CreateRoleFormsRepo();
             _userRepo = _unitOfWork.CreateUserRepo();

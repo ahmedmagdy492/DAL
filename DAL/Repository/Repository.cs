@@ -25,10 +25,6 @@ namespace DAL.Repository
             dbSet.Add(model);
             return model;
         }
-        public bool Commit()
-        {
-            return _context.SaveChanges() > 0;
-        }
 
         public void Delete(T model)
         {
@@ -37,7 +33,7 @@ namespace DAL.Repository
 
         public IEnumerable<T> GetAll()
         {
-            return dbSet.AsEnumerable();
+            return dbSet.ToList();
         }
 
         public T GetById(int id)

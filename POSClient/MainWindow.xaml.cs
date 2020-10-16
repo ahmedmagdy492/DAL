@@ -1,5 +1,7 @@
 ﻿using BLL.Services;
+using DAL.Models;
 using SharedLib;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -16,6 +18,7 @@ namespace POSClient
         private readonly IRoleService _roleService;
         private readonly IUserService _userService;
         private readonly IBranchService _branchService;
+        private readonly ILoggerService _loggerService;
 
         public MainWindow()
         {
@@ -24,6 +27,7 @@ namespace POSClient
             _roleService = new RoleService();
             _userService = new UserService();
             _branchService = new BranchService();
+            _loggerService = new LoggerService();
 
             background_pnl.Background = new LinearGradientBrush(
                 Color.FromRgb(Theme.BackColor.R1, Theme.BackColor.G1, Theme.BackColor.B1),
@@ -50,7 +54,8 @@ namespace POSClient
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            
+            // setting the focus to the first textbox
+            txt_username.Focus();
         }
 
         private void DimForm()
@@ -76,7 +81,17 @@ namespace POSClient
 
             if(isModelValid)
             {
-                var user = await _authService.Login(txt_username.Text, txt_password.Password);
+                User user = null;
+
+                try
+                {
+                    user = await _authService.Login(txt_username.Text, txt_password.Password);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Database server is offline", "An Error has occured", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
 
                 await Task.Run(() =>
                 {
@@ -124,6 +139,18 @@ namespace POSClient
                                     onlineOrdersFrm onlineOrdersFrm = new onlineOrdersFrm();
                                     onlineOrdersFrm.Show();
                                 }
+                                // logging 
+                                await Task.Run(() =>
+                                {
+                                    var logger = new DAL.Models.Logging
+                                    {
+                                        Content = $"{loggedInUser.Username} logged in at {DateTime.Now}",
+                                        Username = loggedInUser.Username,
+                                        LogDate = DateTime.Now,
+                                        UserId = loggedInUser.Id
+                                    };
+                                    _loggerService.Add(logger);
+                                });
                             }
                         }
                     }

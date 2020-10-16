@@ -18,7 +18,7 @@ namespace BLL.Services
 
         public ProductService()
         {
-            _unitOfWork = UnitOfWorkCreator.Instance;
+            _unitOfWork = new UnitOfWork(SharedLib.DBContextCreator.DbContext);
             _prodsRepo = _unitOfWork.CreateProductRepo();
         }
 

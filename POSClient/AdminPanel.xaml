@@ -39,12 +39,12 @@
                 <TextBlock HorizontalAlignment="Left" Margin="101,9,0,0" TextWrapping="Wrap" Text="Roles" VerticalAlignment="Top" FontSize="25" RenderTransformOrigin="0.432,-1.702"/>
                 <Image HorizontalAlignment="Left" Height="61" Margin="100,48,0,0" VerticalAlignment="Top" Width="60" Source="icons8_people_52px.png" RenderTransformOrigin="1.76,0.466"/>
             </Grid>
-            <Grid HorizontalAlignment="Left" Height="126" Margin="259,58.2,0,0" VerticalAlignment="Top" Width="260" Background="#FFFDFBFB" Grid.Row="1" Cursor="Hand" MouseEnter="btn_products_MouseEnter" MouseLeave="btn_products_MouseLeave">
+            <Grid x:Name="btn_logging" HorizontalAlignment="Left" Height="126" Margin="259,58.2,0,0" VerticalAlignment="Top" Width="260" Background="#FFFDFBFB" Grid.Row="1" Cursor="Hand" MouseEnter="btn_products_MouseEnter" MouseLeave="btn_products_MouseLeave" MouseDown="btn_logging_MouseDown">
                 <Grid.Effect>
                     <DropShadowEffect Color="#FFD7D3D3"/>
                 </Grid.Effect>
-                <TextBlock HorizontalAlignment="Left" Margin="86,10,0,0" TextWrapping="Wrap" Text="Settings" VerticalAlignment="Top" FontSize="25" RenderTransformOrigin="0.432,-1.702"/>
-                <Image HorizontalAlignment="Left" Height="61" Margin="100,48,0,0" VerticalAlignment="Top" Width="60" Source="icons8_settings_48px_1.png" RenderTransformOrigin="1.76,0.466"/>
+                <TextBlock HorizontalAlignment="Left" Margin="86,10,0,0" TextWrapping="Wrap" Text="Logging" VerticalAlignment="Top" FontSize="25" RenderTransformOrigin="0.432,-1.702"/>
+                <Image HorizontalAlignment="Left" Height="61" Margin="100,48,0,0" VerticalAlignment="Top" Width="60" Source="1.png" RenderTransformOrigin="1.76,0.466"/>
             </Grid>
             <Grid x:Name="menu_items" HorizontalAlignment="Left" Height="535" Margin="0,44,0,-1.4" VerticalAlignment="Top" Width="191" Background="#FFE0F2F1" Visibility="Hidden" AutomationProperties.Name="menu_items" Grid.RowSpan="2">
                 <Grid.ColumnDefinitions>

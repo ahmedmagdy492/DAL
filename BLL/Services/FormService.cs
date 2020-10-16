@@ -14,7 +14,7 @@ namespace BLL.Services
         private readonly IRepository<FormView> _formViewRepo;
         public FormService()
         {
-            _unitOfWork = SharedLib.UnitOfWorkCreator.Instance;
+            _unitOfWork = new DAL.UnitOfWork(SharedLib.DBContextCreator.DbContext);
             _formViewRepo = _unitOfWork.CreateFormViewRepo();
         }
 

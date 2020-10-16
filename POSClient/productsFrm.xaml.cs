@@ -1,5 +1,7 @@
 ﻿using BLL.Services;
 using DAL.Models;
+using Microsoft.Win32;
+using SharedLib;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -24,11 +26,22 @@ namespace POSClient
     {
         private readonly ICategoryService _categoryService;
         private readonly IProductService _productService;
+        private readonly ImageService _imageService;
         public productsFrm()
         {
             InitializeComponent();
             _categoryService = new CategoryService();
             _productService = new ProductService();
+            _imageService = new ImageManager();
+        }
+
+        public void Clear()
+        {
+            txt_description.Text = string.Empty;
+            txt_image.Text = string.Empty;
+            txt_price.Text = string.Empty;
+            txt_prodName.Text = string.Empty;
+            cmb_category.SelectedIndex = 0;
         }
 
         private bool CheckValidity()
@@ -44,6 +57,10 @@ namespace POSClient
                 isValid = false;
             }
             if(cmb_category.SelectedIndex == -1)
+            {
+                isValid = false;
+            }
+            if(string.IsNullOrWhiteSpace(txt_image.Text))
             {
                 isValid = false;
             }
@@ -64,7 +81,6 @@ namespace POSClient
                 else
                 {
                     e.Handled = false;
-                    break;
                 }
             }
         }
@@ -77,7 +93,7 @@ namespace POSClient
             {
                 categories = new ObservableCollection<Category>(_categoryService.GetAll());
             });
-            cmb_category.ItemsSource = categories
+            cmb_category.ItemsSource = categories;
             cmb_category.DisplayMemberPath = "Name";
             cmb_category.SelectedValuePath = "Id";
             cmb_category.SelectedIndex = 0;
@@ -105,7 +121,18 @@ namespace POSClient
 
                 await Task.Run(() =>
                 {
-                    _productService.Add(product);
+                    product = _productService.Add(product);
+                });
+
+                var image = new DAL.Models.Image
+                {
+                    Path = ImageSaver.GetFileName(txt_image.Text),
+                    ProductId = product.Id
+                };
+
+                await Task.Run(() =>
+                {
+                    _imageService.Add(image);
                 });
 
                 btn_addProduct.IsEnabled = true;
@@ -139,6 +166,22 @@ namespace POSClient
             cmb_category.DisplayMemberPath = "Name";
             cmb_category.SelectedValuePath = "Id";
             cmb_category.SelectedIndex = 0;
+        }
+
+        private void btn_browse_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog opf = new OpenFileDialog
+            {
+                Filter = "PNG Images|*.png",
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures),
+                Title = "Choose an image"
+            };
+
+            var dialogResult = opf.ShowDialog();
+            if(dialogResult.Value == true)
+            {
+                txt_image.Text = opf.FileName;
+            }
         }
     }
 }

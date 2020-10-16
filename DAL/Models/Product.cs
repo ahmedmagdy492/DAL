@@ -20,5 +20,6 @@ namespace DAL.Models
         public Category Category { get; set; }
 
         public IList<OrderItems> OrderItems { get; set; }
+        public IList<Image> Images { get; set; }
     }
 }

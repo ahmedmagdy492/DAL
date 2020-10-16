@@ -2,6 +2,7 @@
 using SharedLib;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,11 +36,33 @@ namespace POSClient
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            // determining which form start first
-            var isFirstTime = await Task.Run(() =>
+            // creating directories if are not exist
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string foldername = System.IO.Path.Combine(path, "MigoSystems");
+            if (!Directory.Exists(foldername))
             {
-                return _authService.IsFirstTime();
-            });
+                Directory.CreateDirectory(foldername);
+            }
+
+            foldername = System.IO.Path.Combine(path, "MigoSystems", "POSFiles");
+            if (!Directory.Exists(foldername))
+            {
+                Directory.CreateDirectory(foldername);
+            }
+
+            // determining which form start first
+            bool isFirstTime = false;
+            try
+            {
+                isFirstTime = await Task.Run(() =>
+                {
+                    return _authService.IsFirstTime();
+                });
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Database server is currently offline", "An Error has occurred", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
             this.Hide();
             if(isFirstTime)

@@ -15,7 +15,7 @@ namespace BLL.Services
         private readonly UnitOfWork _unitOfWork;
         public BranchService()
         {
-            _unitOfWork = UnitOfWorkCreator.Instance;
+            _unitOfWork = new UnitOfWork(DBContextCreator.DbContext);
             _branchRepo = _unitOfWork.CreateBranchRepo();
         }
         public Branch Add(Branch model)
