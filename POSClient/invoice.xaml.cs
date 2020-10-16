@@ -12,6 +12,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Documents;
 
 namespace POSClient
 {
@@ -63,9 +64,11 @@ namespace POSClient
 
             return isValid;
         }
+        
         private void Init()
         {
-            dgv_orderItems.ItemsSource = new ObservableCollection<CartItem>();
+            cart.Clear();
+            dgv_orderItems.ItemsSource = new ObservableCollection<CartItem>(cart);
             txt_orderId.Text = "";
             txt_search.Text = string.Empty;
             // focus on the search
@@ -241,12 +244,19 @@ namespace POSClient
                     _orderItemService.Add(orderItem);
                 }
 
+                // printing the invoice
+                PrintDialog pd = new PrintDialog();
+                FlowDocument doc = new FlowDocument();
+                doc.Name = "POSInvoice";
+
+                pd.PrintVisual(dgv_orderItems, "DGV");
+                pd.PrintVisual(txt_orderId, "");
+                pd.PrintVisual(txt_totalValue, "");
+
                 Init();
                 btn_submitPrint.IsEnabled = true;
                 btn_submitPrint.Foreground = new SolidColorBrush(Colors.White);
                 btn_submitPrint.Content = "Submit and Print";
-
-                // printing the invoice
             }
         }
 

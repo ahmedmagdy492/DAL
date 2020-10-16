@@ -21,7 +21,7 @@ namespace DAL.Models
         public string Address { get; set; }
 
         [ForeignKey(nameof(Role))]
-        public int RoleId { get; set; }
+        public int? RoleId { get; set; }
         public Role Role { get; set; }
 
         [ForeignKey(nameof(Branch))]

@@ -88,6 +88,10 @@
     <Compile Include="Migrations\202010112134315_addedImagesForProducts.designer.cs">
       <DependentUpon>202010112134315_addedImagesForProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010161954409_makeRoleIdNullableInRoleModel.cs" />
+    <Compile Include="Migrations\202010161954409_makeRoleIdNullableInRoleModel.designer.cs">
+      <DependentUpon>202010161954409_makeRoleIdNullableInRoleModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\Branch.cs" />
@@ -137,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010112134315_addedImagesForProducts.resx">
       <DependentUpon>202010112134315_addedImagesForProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010161954409_makeRoleIdNullableInRoleModel.resx">
+      <DependentUpon>202010161954409_makeRoleIdNullableInRoleModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
